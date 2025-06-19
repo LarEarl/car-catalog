@@ -3,20 +3,12 @@ import CarCard from "@/components/CarCard";
 import SortSelect from "@/components/SortSelect";
 import Pagination from "@/components/Pagination";
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams?: {
-    page?: string;
-    sort?: string;
-    order?: string;
-  };
-}) {
+export default async function Home({ searchParams }: any) {
   const page = Number(searchParams?.page) || 1;
   const sort = searchParams?.sort === "price" ? "price" : undefined;
   const order =
     searchParams?.order === "asc" || searchParams?.order === "desc"
-      ? (searchParams?.order as "asc" | "desc")
+      ? searchParams?.order
       : undefined;
 
   let carsData;
