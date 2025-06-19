@@ -5,4 +5,6 @@ export interface Car {
   images: {
     image: string[];
   };
+  modification_id?: string;
+  year?: number;
 }
